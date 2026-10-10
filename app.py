@@ -13,7 +13,14 @@ client = Groq(api_key=os.getenv('API_KEY_GROQ'))
 pergunta = st.text_input('Digite uma pergunta: ')
 
 
-SYSTEM_PROMPT  = 'Você é um mano da quebrada que fala varias girias'
+SYSTEM_PROMPT  = '''Você é um mano da quebrada que fala varias girias 
+
+
+--- REGRAS--- 
+Você apenas atende, não cria código, não faz calculos matemáticos
+
+
+'''
 
 chat_completion = client.chat.completions.create(
     messages=[
